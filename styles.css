@@ -1,65 +1,40 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* Thêm hiệu ứng cho ảnh */
+img {
+    width: 100%;
+    transition: all 0.3s ease;  /* Thêm hiệu ứng chuyển động */
+    border-radius: 8px; /* Bo góc ảnh */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
+/* Hiệu ứng zoom ảnh */
+img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi di chuột qua */
+    filter: brightness(1.2); /* Làm sáng ảnh khi hover */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* Hiệu ứng làm mờ ảnh khi hover */
+img.blur:hover {
+    filter: blur(4px); /* Mờ ảnh */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+/* Hiệu ứng chuyển động nhẹ khi hover */
+img.slide:hover {
+    transform: translateY(-10px); /* Di chuyển ảnh lên một chút khi hover */
+    filter: brightness(1.1); /* Làm sáng ảnh */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+/* Hiệu ứng làm sáng ảnh khi hover */
+img.brightness:hover {
+    filter: brightness(1.5); /* Làm sáng ảnh khi hover */
 }
 
-.hero {
-    background-color: #333;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
+/* Cải thiện hiển thị ảnh khi ở trong các section */
+.bio-info img, .hero img, .about img {
+    border-radius: 12px; /* Bo góc đẹp */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
 }
 
-.hero h1 {
-    font-size: 2.5em;
-}
-
-.cta-button {
-    background-color: #ff5f57;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.bio, .about, .contact, .discord {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-footer p {
-    margin: 0;
+/* Tăng hiệu ứng khi hover lên ảnh trong các section */
+.bio-info img:hover, .hero img:hover, .about img:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    transition: transform 0.3s ease;
 }
