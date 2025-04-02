@@ -11,6 +11,8 @@
             padding: 0;
             text-align: center;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            position: relative;
+            overflow: hidden;
         }
         header {
             background: #333;
@@ -23,8 +25,9 @@
             max-width: 800px;
             padding: 20px;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
         }
         .product {
             display: inline-block;
@@ -57,6 +60,18 @@
             background: #333;
             color: white;
         }
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10px); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -65,23 +80,36 @@
         <h2>Sản Phẩm Nổi Bật</h2>
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Sản phẩm 1">
-            <h3>Sản Phẩm TG1968</h3>
+            <h3>Sản phẩm 1</h3>
             <p>Giá: 100.000 VNĐ</p>
             <button>Mua ngay</button>
         </div>
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Sản phẩm 2">
-            <h3>Sản phẩm Ducklunar</h3>
+            <h3>Sản phẩm 2</h3>
             <p>Giá: 150.000 VNĐ</p>
             <button>Mua ngay</button>
         </div>
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Sản phẩm 3">
-            <h3>Sản phẩm phongxgaming</h3>
+            <h3>Sản phẩm 3</h3>
             <p>Giá: 200.000 VNĐ</p>
             <button>Mua ngay</button>
         </div>
     </div>
     <footer>&copy; 2025 Cửa Hàng Trực Tuyến</footer>
+    <script>
+        function createRain() {
+            for (let i = 0; i < 50; i++) {
+                let raindrop = document.createElement('div');
+                raindrop.classList.add('raindrop');
+                raindrop.style.left = Math.random() * 100 + 'vw';
+                raindrop.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                document.body.appendChild(raindrop);
+                setTimeout(() => { raindrop.remove(); }, 3000);
+            }
+        }
+        setInterval(createRain, 500);
+    </script>
 </body>
 </html>
