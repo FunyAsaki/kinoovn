@@ -96,6 +96,21 @@
             from { transform: translateX(0); }
             to { transform: translateX(10px); }
         }
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 3px solid #fff;
+            transition: transform 0.5s ease-in-out;
+        }
+        footer.show {
+            transform: translateY(-100px);
+        }
     </style>
 </head>
 <body>
@@ -124,6 +139,9 @@
             <button>Mua ngay</button>
         </div>
     </div>
+    <footer id="footer">
+        <p>© 2025 Cửa Hàng Trực Tuyến. All rights reserved.</p>
+    </footer>
     <script>
         function createRain(container) {
             for (let i = 0; i < 20; i++) {
@@ -148,6 +166,12 @@
         const headerEffects = document.querySelector('.header-effects');
         setInterval(() => createRain(headerEffects), 500);
         createStars(headerEffects);
+
+        // Footer slide effect
+        const footer = document.getElementById('footer');
+        setTimeout(() => {
+            footer.classList.add('show');
+        }, 1000); // Wait for 1 second before showing the footer
     </script>
 </body>
 </html>
