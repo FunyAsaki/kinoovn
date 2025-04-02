@@ -3,216 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa Hàng Trực Tuyến</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: linear-gradient(135deg, #111, #222);
-            position: relative;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .header-effects {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .container {
-            margin: 20px auto;
-            max-width: 1200px;
-            padding: 50px 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
-            border: 3px solid black;
-            position: relative;
-            z-index: 10;
-            min-height: 600px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 cột */
-            gap: 20px; /* Khoảng cách giữa các ô */
-        }
-        .product {
-            background: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-        }
-        .product img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .product button {
-            background: #ff758c;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .product button:hover {
-            background: #ff5252;
-        }
-        .raindrop, .star {
-            position: absolute;
-            opacity: 0.8;
-        }
-        .raindrop {
-            width: 2px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.7);
-            animation: fall linear infinite;
-        }
-        .star {
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate, moveStars 5s infinite linear;
-        }
-        @keyframes fall {
-            from { transform: translateY(-10px); opacity: 1; }
-            to { transform: translateY(100vh); opacity: 0; }
-        }
-        @keyframes twinkle {
-            from { opacity: 0.5; }
-            to { opacity: 1; }
-        }
-        @keyframes moveStars {
-            from { transform: translateX(0); }
-            to { transform: translateX(10px); }
-        }
-        footer {
-            background-color: #000;
-            color: white;
-            padding: 20px;
-            position: absolute;
-            bottom: -100px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            border-top: 3px solid #fff;
-            transition: transform 0.5s ease-in-out;
-        }
-        footer.show {
-            transform: translateY(-100px);
-        }
-        .extra-space {
-            height: 100px; /* Khoảng trống phía dưới */
-        }
-    </style>
+    <title>Giới thiệu về Tôi</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        Cửa Hàng Trực Tuyến
-        <div class="header-effects"></div>
+        <div class="logo">Giới thiệu về Tôi</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html">Về Tôi</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+                <li><a href="discord.html">Discord</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <!-- 9 sản phẩm -->
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 1">
-            <h3>Sản phẩm 1</h3>
-            <p>Giá: 100.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 2">
-            <h3>Sản phẩm 2</h3>
-            <p>Giá: 150.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 3">
-            <h3>Sản phẩm 3</h3>
-            <p>Giá: 200.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 4">
-            <h3>Sản phẩm 4</h3>
-            <p>Giá: 120.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 5">
-            <h3>Sản phẩm 5</h3>
-            <p>Giá: 170.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 6">
-            <h3>Sản phẩm 6</h3>
-            <p>Giá: 250.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 7">
-            <h3>Sản phẩm 7</h3>
-            <p>Giá: 180.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 8">
-            <h3>Sản phẩm 8</h3>
-            <p>Giá: 220.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Sản phẩm 9">
-            <h3>Sản phẩm 9</h3>
-            <p>Giá: 300.000 VNĐ</p>
-            <button>Mua ngay</button>
-        </div>
-    </div>
-    <footer id="footer">
-        <p>© 2025 Cửa Hàng Trực Tuyến. All rights reserved.</p>
-    </footer>
-    <div class="extra-space"></div> <!-- Khoảng trống thêm vào -->
-    <script>
-        function createRain(container) {
-            for (let i = 0; i < 20; i++) {
-                let raindrop = document.createElement('div');
-                raindrop.classList.add('raindrop');
-                raindrop.style.left = Math.random() * 100 + '%';
-                raindrop.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                container.appendChild(raindrop);
-                setTimeout(() => { raindrop.remove(); }, 3000);
-            }
-        }
-        function createStars(container) {
-            for (let i = 0; i < 10; i++) {
-                let star = document.createElement('div');
-                star.classList.add('star');
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                container.appendChild(star);
-            }
-        }
-        const headerEffects = document.querySelector('.header-effects');
-        setInterval(() => createRain(headerEffects), 500);
-        createStars(headerEffects);
 
-        // Footer slide effect
-        const footer = document.getElementById('footer');
-        setTimeout(() => {
-            footer.classList.add('show');
-        }, 1000); // Wait for 1 second before showing the footer
-    </script>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chào Mừng Bạn Đến Với Trang Web Của Tôi</h1>
+            <p>Hãy cùng khám phá về tôi và những gì tôi làm!</p>
+            <a href="about.html" class="cta-button">Tìm Hiểu Thêm</a>
+        </div>
+    </section>
+
+    <section class="bio">
+        <h2>Thông Tin Cá Nhân</h2>
+        <p>Tôi là một lập trình viên đam mê công nghệ, và luôn tìm cách cải tiến kỹ năng của mình.</p>
+        <div class="bio-info">
+            <img src="https://via.placeholder.com/150" alt="Ảnh đại diện">
+            <p>Discord: <a href="https://discord.com/users/1234567890">Click để liên hệ</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Tất cả quyền được bảo vệ</p>
+    </footer>
 </body>
 </html>
