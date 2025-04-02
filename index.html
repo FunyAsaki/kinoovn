@@ -19,6 +19,16 @@
             color: white;
             padding: 20px;
             font-size: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-effects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
         .container {
             margin: 20px auto;
@@ -77,7 +87,7 @@
             height: 3px;
             background: white;
             border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
+            animation: twinkle 2s infinite alternate, moveStars 5s infinite linear;
         }
         @keyframes fall {
             from { transform: translateY(-10px); opacity: 1; }
@@ -87,10 +97,17 @@
             from { opacity: 0.5; }
             to { opacity: 1; }
         }
+        @keyframes moveStars {
+            from { transform: translateX(0); }
+            to { transform: translateX(10px); }
+        }
     </style>
 </head>
 <body>
-    <header>Cửa Hàng Trực Tuyến</header>
+    <header>
+        Cửa Hàng Trực Tuyến
+        <div class="header-effects"></div>
+    </header>
     <div class="container">
         <h2>Sản Phẩm Nổi Bật</h2>
         <div class="product">
@@ -114,28 +131,29 @@
     </div>
     <footer>&copy; 2025 Cửa Hàng Trực Tuyến</footer>
     <script>
-        function createRain() {
+        function createRain(container) {
             for (let i = 0; i < 20; i++) {
                 let raindrop = document.createElement('div');
                 raindrop.classList.add('raindrop');
-                raindrop.style.left = Math.random() * 100 + 'vw';
+                raindrop.style.left = Math.random() * 100 + '%';
                 raindrop.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                document.body.appendChild(raindrop);
+                container.appendChild(raindrop);
                 setTimeout(() => { raindrop.remove(); }, 3000);
             }
         }
-        function createStars() {
+        function createStars(container) {
             for (let i = 0; i < 10; i++) {
                 let star = document.createElement('div');
                 star.classList.add('star');
-                star.style.left = Math.random() * 100 + 'vw';
-                star.style.top = Math.random() * 20 + 'vh';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
                 star.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                document.body.appendChild(star);
+                container.appendChild(star);
             }
         }
-        setInterval(createRain, 500);
-        createStars();
+        const headerEffects = document.querySelector('.header-effects');
+        setInterval(() => createRain(headerEffects), 500);
+        createStars(headerEffects);
     </script>
 </body>
 </html>
